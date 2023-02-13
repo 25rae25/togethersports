@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import classes from './Header.module.css';
 
@@ -6,20 +6,20 @@ const Header = () => {
 
   return (
     <header className={classes.header}>
-      <Link to='/'>
+      <NavLink to='/'>
         <div className={classes.logo}>TogetherSports</div>
-      </Link>
+      </NavLink>
       <nav>
         <ul>
           <li>
-			<Link to=''>소개</Link>
-		  </li>
-		  <li>
-			<Link to=''>운동</Link>
-		  </li>
-		  <li>
-			<Link to=''>로그인</Link>
-		  </li>
+			      <NavLink to='/introduce' style={{color:'white'}} activeStyle={{color:'yellow'}}>소개</NavLink>
+		      </li>
+		      <li>
+			      <NavLink to='/health' style={{color:'white'}} activeStyle={{color:'yellow'}}>운동</NavLink>
+		      </li>
+		      <li>
+			      <NavLink to='/login' style={{color:'white'}} activeStyle={{color:'yellow'}}>로그인</NavLink>
+		      </li>
         </ul>
       </nav>
     </header>
