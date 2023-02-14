@@ -23,7 +23,7 @@ const MainBottom = () => {
 const Main = styled.div`
 	display: flex;
 	justify-content: space-between;
-	width: 90%;
+	width: 80%;
 	margin: 130px auto;
 `
 
