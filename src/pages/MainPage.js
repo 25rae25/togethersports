@@ -1,10 +1,15 @@
+import { Fragment } from "react";
 import MainSlider from "../components/Main/MainSlider";
+import MainTop from "../components/Main/MainTop";
 
 const MainPage = () => {
   
 
   return (
-	<MainSlider />
+      <Fragment>
+        <MainTop />
+        <MainSlider />
+      </Fragment>
   );
 }
 
