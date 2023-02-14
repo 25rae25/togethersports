@@ -42,7 +42,7 @@ const Header = () => {
                 <NavLink to='/board' style={{color:'white'}} activeStyle={{color:'yellow'}}>운동</NavLink>
               </li>
               <li>
-                <button onClick={logoutHandler}>로그아웃</button>
+                <button className={classes.logout} onClick={logoutHandler}>로그아웃</button>
               </li>
             </>
           )}

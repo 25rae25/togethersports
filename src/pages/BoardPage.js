@@ -56,7 +56,7 @@ const BoardPage = ()=> {
     console.log(data);
   }
 
-  let content = <p>Found no board.</p>;
+  let content = <Config>운동 내용이 없습니다</Config>;
 
   if (board.length > 0) {
     content = <BoardList board={board} />;
@@ -67,7 +67,7 @@ const BoardPage = ()=> {
   }
 
   if (isLoading) {
-    content = <p>Loading...</p>;
+    content = <Loading>로딩중...</Loading>;
   }
   
 
@@ -96,6 +96,16 @@ const ButtonClick = styled.button`
     font-weight: bold;
     font-size: 15px;
     cursor: pointer;
+`
+
+const Loading = styled.div`
+  text-align: center;
+  margin: 20px 0;
+`
+
+const Config = styled.div`
+  text-align: center;
+  margin: 20px 0;
 `
 
 export default BoardPage;

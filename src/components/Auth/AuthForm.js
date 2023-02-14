@@ -31,7 +31,7 @@ const AuthForm = () => {
     if (isLogin) {
       url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.REACT_APP_FIREBASEKEY}`
     } else {
-      url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.REACT_APP_FIREBASEKEY}U`
+      url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.REACT_APP_FIREBASEKEY}`
     }
     fetch(
       url,
@@ -67,7 +67,7 @@ const AuthForm = () => {
 
   return (
     <section className={classes.auth}>
-      <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
+      <h1>{isLogin ? '로그인' : '회원가입'}</h1>
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
           <label htmlFor='email'>이메일</label>
@@ -83,14 +83,14 @@ const AuthForm = () => {
           />
         </div>
         <div className={classes.actions}>
-          {!isLoading && <button>{isLogin ? 'Login' : 'Create Account'}</button>}
-          {isLoading && <p>아이디 생성중입니다...</p>}
+          {!isLoading && <button>{isLogin ? '로그인' : '아이디를 새로 만들기'}</button>}
+          {isLoading && <p>로그인중입니다...</p>}
           <button
             type='button'
             className={classes.toggle}
             onClick={switchAuthModeHandler}
           >
-            {isLogin ? 'Create new account' : 'Login with existing account'}
+            {isLogin ? '아이디를 새로 만드세요' : '로그인하기'}
           </button>
         </div>
       </form>
