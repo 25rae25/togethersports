@@ -1,13 +1,15 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, Fragment } from 'react';
+import styled from 'styled-components';
 
 import AddBoard from '../components/Board/AddBoard';
 import BoardList from '../components/Board/BoardList';
 
 const BoardPage = ()=> {
-  const [boards, setBoards] = useState([]);
+  const [board, setBoards] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  console.log(board, "============")
   const fetchBoardsHandler = useCallback(async () => {
     setIsLoading(true);
     setError(null);
@@ -56,8 +58,8 @@ const BoardPage = ()=> {
 
   let content = <p>Found no board.</p>;
 
-  if (boards.length > 0) {
-    content = <BoardList board={boards} />;
+  if (board.length > 0) {
+    content = <BoardList board={board} />;
   }
 
   if (error) {
@@ -70,16 +72,30 @@ const BoardPage = ()=> {
   
 
   return (
-    <React.Fragment>
+    <Fragment>
       <section>
         <AddBoard onAddBoard={addBoardHandler} />
       </section>
       <section>
-        <button onClick={fetchBoardsHandler}>Fetch board</button>
+        <ButtonClick onClick={fetchBoardsHandler}>운동 보기</ButtonClick>
       </section>
       <section>{content}</section>
-    </React.Fragment>
+    </Fragment>
   );
 }
+
+const ButtonClick = styled.button`
+    width: 68%;
+    padding: 10px;
+    margin: 10px auto 30px auto;
+    display: block;
+    border: none;
+    background: #0e91e2;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+`
 
 export default BoardPage;

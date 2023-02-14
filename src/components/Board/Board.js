@@ -1,16 +1,40 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import classes from './Board.module.css';
 
 const Board = (props) => {
-  console.log(props.board)
+  console.log(props.boards)
   return (
-    <li className={classes.movie}>
-      <h2>{props.title}</h2>
-      <h3>{props.releaseDate}</h3>
+    <BoardWrap>
+      <BoardTitle>{props.title}</BoardTitle>
+      <BoardDate>{props.releaseDate}</BoardDate>
       <p>{props.openingText}</p>
-    </li>
+    </BoardWrap>
   );
 };
+
+const BoardWrap = styled.div`
+  margin: 1rem;
+	padding: 1rem;
+  width:100%;
+	background-color: #0e91e2;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+	border-radius: 12px;
+	text-align: center;
+	color: white;
+`
+
+const BoardTitle = styled.h1`
+  font-size: 2rem;
+	color: #f7e702;
+`
+
+const BoardDate = styled.h3`
+  color: #eccf77;
+	margin: 0;
+	font-size: 1rem;
+`
+
+
 
 export default Board;

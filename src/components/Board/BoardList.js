@@ -1,12 +1,12 @@
-import React from 'react';
+import styled from 'styled-components';
 
 import Board from './Board';
-import classes from './BoardList.module.css';
 
 const BoardList = (props) => {
+  console.log(props.boards)
   return (
-    <ul className={classes['movies-list']}>
-      {props.boards.map((board) => (
+    <BoardsList>
+      {props.board.map((board) => (
         <Board
           key={board.id}
           title={board.title}
@@ -14,8 +14,16 @@ const BoardList = (props) => {
           openingText={board.openingText}
         />
       ))}
-    </ul>
+    </BoardsList>
   );
 };
+
+const BoardsList = styled.div`
+  height: 550px;
+  width: 70%;
+  overflow-y: scroll;
+	margin: 80px auto;
+	padding: 0;
+`
 
 export default BoardList;

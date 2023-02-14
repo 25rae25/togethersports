@@ -2,12 +2,12 @@ import React, { useRef } from 'react';
 
 import classes from './AddBoard.module.css';
 
-function AddBoard(props) {
+const AddBoard = (props) => {
   const titleRef = useRef('');
   const openingTextRef = useRef('');
   const releaseDateRef = useRef('');
 
-  function submitHandler(event) {
+  const submitHandler = (event) => {
     event.preventDefault();
 
     const board = {
@@ -20,22 +20,23 @@ function AddBoard(props) {
   }
 
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} className={classes.formWrap}>
       <div className={classes.control}>
-        <label htmlFor='title'>Title</label>
+        <label htmlFor='title'>제목</label>
         <input type='text' id='title' ref={titleRef} />
       </div>
       <div className={classes.control}>
-        <label htmlFor='opening-text'>Opening Text</label>
+        <label htmlFor='opening-text'>내용</label>
         <textarea rows='5' id='opening-text' ref={openingTextRef}></textarea>
       </div>
       <div className={classes.control}>
-        <label htmlFor='date'>Release Date</label>
+        <label htmlFor='date'>날짜</label>
         <input type='text' id='date' ref={releaseDateRef} />
       </div>
-      <button>Add board</button>
+      <button className={classes.addButton}>추가하기</button>
     </form>
   );
 }
+
 
 export default AddBoard;
