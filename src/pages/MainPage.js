@@ -1,8 +1,11 @@
+import MainSlider from "../components/Main/MainSlider";
+
 const MainPage = () => {
+  
 
-	return(
-		<div>안녕하세요</div>
-	);
-};
+  return (
+	<MainSlider />
+  );
+}
 
-export default MainPage;
+export default MainPage

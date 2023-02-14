@@ -2,19 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap');
 
-.fk {
-  font-family: 'Fredoka One', cursive;
-}
-
-.os {
-  font-family: 'Oswald', sans-serif;
-}
-
-body {
-  font-family: 'Noto Sans KR', sans-serif;
-  padding: 0;
-  margin: 0;
-}
 
 /******  navi_wrapper  *******/
 .navi_wrapper {
@@ -59,7 +46,7 @@ body {
   }
   
   .section {
-	height: 72vh;
+	height: 82vh;
 	padding-top: 50px;
   }
   
